@@ -32,6 +32,7 @@ try:
         for row in f:
           
             # = Replaces the First Part of the File Name (Still has an underscore to remove at start)
+            # == Note: Underscore Could Also be Removed Here - But Inconsistent File Names in Dataset
             name = row.replace("parameters", "")
 
             # = Get Rid of First Character (I.E. the underscore)
@@ -43,6 +44,9 @@ try:
             # = Write Names to File (will write in project directory)
             w.write(name.lower())
             w.write('\n')
+            
+            # = Close the Application
+            sys.exit()
 
     # = Call the Tk Window
     root.mainloop()
